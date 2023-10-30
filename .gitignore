@@ -19,3 +19,7 @@
 
 # Go workspace file
 go.work
+
+# Hugo files
+.hugo_build.lock
+public
