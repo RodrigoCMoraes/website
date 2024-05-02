@@ -23,3 +23,12 @@ go.work
 # Hugo files
 .hugo_build.lock
 public
+
+# Docker files
+Dockerfile
+.dockerignore
+
+# VS Code files
+.vscode/
+
+README.md
