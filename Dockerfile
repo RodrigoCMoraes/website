@@ -6,5 +6,5 @@ COPY . .
 RUN hugo
 
 FROM nginx:stable-alpine3.19-slim
-COPY --from=builder /builder/public/* /var/www/website/
+COPY --from=builder /builder/public/ /var/www/website/
 COPY nginx.conf /etc/nginx/nginx.conf
