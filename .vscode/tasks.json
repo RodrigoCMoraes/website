@@ -6,18 +6,18 @@
         {
             "label": "container-build",
             "type": "shell",
-            "command": "docker build -t website ."
+            "command": "docker-compose build"
         },
         {
             "label": "container-run",
             "type": "shell",
-            "command": "docker run --rm -p 8080:80 --name website website",
+            "command": "docker-compose up --build -d",
             "dependsOn": ["container-build"]
         },
         {
             "label": "container-stop",
             "type": "shell",
-            "command": "docker stop $(docker ps -a -q --filter=\"name=website\")"
+            "command": "docker-compose stop"
         }
     ]
 }
