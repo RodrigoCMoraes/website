@@ -4,20 +4,31 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "container-build",
+            "label": "[local] build",
             "type": "shell",
             "command": "docker-compose build"
         },
         {
-            "label": "container-run",
+            "label": "[local] run",
             "type": "shell",
             "command": "docker-compose up --build -d",
             "dependsOn": ["container-build"]
         },
         {
-            "label": "container-stop",
+            "label": "[local] stop",
             "type": "shell",
             "command": "docker-compose stop"
+        },
+        {
+            "label": "[remote] run",
+            "type": "shell",
+            "command": "docker-compose --context remote up --build -d",
+            "dependsOn": ["container-build"]
+        },
+        {
+            "label": "[remote] stop",
+            "type": "shell",
+            "command": "docker-compose --context remote stop"
         }
     ]
 }
