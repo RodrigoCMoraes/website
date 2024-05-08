@@ -1,0 +1,34 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "[local] build",
+            "type": "shell",
+            "command": "docker-compose build"
+        },
+        {
+            "label": "[local] run",
+            "type": "shell",
+            "command": "docker-compose up --build -d",
+            "dependsOn": ["container-build"]
+        },
+        {
+            "label": "[local] stop",
+            "type": "shell",
+            "command": "docker-compose stop"
+        },
+        {
+            "label": "[remote] run",
+            "type": "shell",
+            "command": "docker-compose --context remote up --build -d",
+            "dependsOn": ["container-build"]
+        },
+        {
+            "label": "[remote] stop",
+            "type": "shell",
+            "command": "docker-compose --context remote stop"
+        }
+    ]
+}
