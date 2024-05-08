@@ -1,0 +1,9 @@
+entries:
+  - title: All Posts
+    post_list:
+      limit: 1
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: posts/index.html
+  - title: RSS
+    url: index.xml
