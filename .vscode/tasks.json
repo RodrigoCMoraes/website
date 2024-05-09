@@ -6,29 +6,29 @@
         {
             "label": "[local] build",
             "type": "shell",
-            "command": "docker-compose build"
+            "command": "docker-compose -f docker-compose-development.yaml build"
         },
         {
             "label": "[local] run",
             "type": "shell",
-            "command": "docker-compose up --build -d",
+            "command": "docker-compose -f docker-compose-development.yaml up --build -d",
             "dependsOn": ["container-build"]
         },
         {
             "label": "[local] stop",
             "type": "shell",
-            "command": "docker-compose stop"
+            "command": "docker-compose -f docker-compose-development.yaml stop"
         },
         {
             "label": "[remote] run",
             "type": "shell",
-            "command": "docker-compose --context remote up --build -d",
+            "command": "docker-compose --context remote -f docker-compose-production.yaml up --build -d",
             "dependsOn": ["container-build"]
         },
         {
             "label": "[remote] stop",
             "type": "shell",
-            "command": "docker-compose --context remote stop"
+            "command": "docker-compose --context remote -f docker-compose-production.yaml stop"
         }
     ]
 }
